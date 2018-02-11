@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BriteCore Risk API</title>
+    <!--Gets Vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!--App script using vue.js-->
+    <script src="vue_app.js" defer></script>
+
+    <!--Aligns input fields-->
+    <style>
+      label {
+        display: inline-block;
+        width: 75px;
+        text-align: right;
+        margin-bottom: 5px;
+      }
+    </style>
+</head>
+
+<body>
+
+<h1>BriteCore Risk API</h1>
+<h2>By Oliver Thompson</h2>
+
+<!--Connects to Vue app-->
+<div id="app">
+
+  <!--Creates a pick list of all available risks-->
+  <select v-model="selected">
+    <option v-for="risk in risk_list">{{risk.r_name}}</option>
+  </select>
+
+  <!--Grabs applicable fields for selected risk-->
+  <button v-on:click="select_risk">Select Risk</button>
+
+  <!--Grabs applicable fields for every risk-->
+  <button v-on:click="all_risks">All Risks</button>
+
+  <!--Puts all fields in a form-->
+  <form>
+    <div v-for="risk in risks">
+
+      <!--Prints the risk name as a header-->
+      <div v-for="r in risk.risk">
+        <h2>{{r.r_name}}</h2>
+      </div>
+
+      <!--Prints each field-->
+      <div v-for="f in risk.field">
+        <label>{{f.f_name}}:</label>
+
+        <!--Adds the appropriate input type for the field-->
+        <span v-if="f.f_type == 'Text'">
+          <input type="text">
+        </span>
+        <span v-if="f.f_type == 'Date'">
+          <input type="date">
+        </span>
+        <span v-if="f.f_type == 'Number'">
+          <input type="number">
+        </span>
+
+        <span v-if="f.f_type == 'Enum'">
+          <!--Creates a pick list of enums for a field-->
+          <select>
+            <option v-for="e in risk.enum">
+              <span v-if="e.e_f_id == f.f_id">
+                {{e.e_name}}
+              </span>
+            </option>
+          </select>
+
+        </span>
+      </div>
+
+      <!--Adds a break between risks-->
+      <br>
+
+    </div>
+
+    <!--Adds a submit button to the form-->
+    <input type="submit" id="submit" v-on:click="hide_submit">
+  </form>
+</div>
+
+</body>
+
+</html>
