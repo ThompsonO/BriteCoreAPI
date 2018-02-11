@@ -48,7 +48,7 @@ From there I created a simple HTML page that utilizes Vue.js to dynamically popu
 based on the fields associated with selected risks.  A risk is selected by either picking a 
 risk from a drop-down list, or selecting to view all risks at once.  These functions call the 
 created API endpoints to determine what fields are then shown on the form.  The fields have 
-appropriate input fields created dynamically, with date-pickers for dates, drop-down selections 
+appropriate input field types created dynamically, with date-pickers for dates, drop-down selections 
 for enums, numerical fields for numbers, and text fields for text.  When a risk or all risks are 
 selected a submit button is also shown dynamically though it has limited functionality as per the 
 scope of the project.
