@@ -32,7 +32,7 @@ class Enum(db.Entity):
 
 params = dict(
     sqlite=dict(provider='sqlite', filename='bcdatabase.sqlite', create_db=True),
-    mysql=dict(provider='mysql', host="britecdb.ceuqzjblxim5.us-east-2.rds.amazonaws.com", port=3306, user="adminroot", passwd="adminroot", db="BriteCDb"),
+    mysql=dict(provider='mysql', host="britecdb.ceuqzjblxim5.us-east-2.rds.amazonaws.com", port=3306, user="****", passwd="****", db="BriteCDb"),
     postgres=dict(provider='postgres', user='pony', password='pony', host='localhost', database='pony'),
     oracle=dict(provider='oracle', user='c##pony', password='pony', dsn='localhost/orcl')
 )
