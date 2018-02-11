@@ -10,19 +10,21 @@ PyMySQL connecting to the database itself.
 
 The ORMs are as follows:
 
-class Risk(db.Entity):
-    r_id = PrimaryKey(int, auto=True)
-    r_name = Required(str, unique=True)
-    field = Set("Field")
-class Field(db.Entity):
-    f_id = PrimaryKey(int, auto=True)
-    f_name = Required(str)
-    f_type = Required(str)
-    f_r_id = Required(Risk)
-    enum = Set("Enum")
-class Enum(db.Entity):
-    e_id = PrimaryKey(int, auto=True)
-    e_name = Required(str)
+class Risk(db.Entity):  
+    r_id = PrimaryKey(int, auto=True)   
+    r_name = Required(str, unique=True)     
+    field = Set("Field")    
+
+class Field(db.Entity):     
+    f_id = PrimaryKey(int, auto=True)   
+    f_name = Required(str)  
+    f_type = Required(str)  
+    f_r_id = Required(Risk) 
+    enum = Set("Enum")  
+
+class Enum(db.Entity):    
+    e_id = PrimaryKey(int, auto=True)    
+    e_name = Required(str)    
     e_f_id = Required(Field)
  
 I created a group of four functions utilizing Pony’s framework to query the database.
@@ -63,20 +65,20 @@ this project and I would proudly like to share that prior to this project I only
 Python and limited experience with JavaScript.  I look forward to learning and mastering new tools and projects 
 in the future!
 
-Thank you for the opportunity,
+Thank you for the opportunity,  
 Oliver Thompson
 
 
-Tools Utilized:
-AWS: Lambda, API Gateway, S3, CloudFormation, RDS
-Vue.js
-Zappa
-VirtualEnv
-Flask_CORS
-Flask-Restful
-Flask
-Python 2.7
-Pony
-PyMySQL
-MySQL
-SQLite
+Tools Utilized:     
+AWS: Lambda, API Gateway, S3, CloudFormation, RDS   
+Vue.js  
+Zappa   
+VirtualEnv  
+Flask_CORS  
+Flask-Restful   
+Flask   
+Python 2.7  
+Pony    
+PyMySQL 
+MySQL   
+SQLite  
