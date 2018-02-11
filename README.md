@@ -54,7 +54,8 @@ selected a submit button is also shown dynamically though it has limited functio
 scope of the project.
 
 The HTML file and associated Javascipt file were uploaded to an S3 AWS bucket and hosted live from 
-there.  You can see a live instance of the whole project working together here.
+there.  You can see a live instance of the whole project working together here: 
+https://s3.us-east-2.amazonaws.com/bc-html/index.html
 
 The above describes the functionality of the final product, but I thought it might be of interest to 
 know the process I used to create it.  I first developed the entire project locally starting with an 
